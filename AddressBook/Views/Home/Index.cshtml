@@ -1,0 +1,16 @@
+﻿@model IList<AddressBook.ServiceLayer.Overview.Models.Person>
+   
+ @{
+        ViewBag.Title = "Home Page";
+
+    }
+
+    <div>
+        <ul>
+            @foreach (var m in Model)
+            {
+                <li>@m.Id, @m.FirstName</li>
+            }
+
+        </ul>
+</div>
