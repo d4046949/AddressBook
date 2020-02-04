@@ -20,7 +20,7 @@ namespace AddressBook.Controllers
         {
            IList<Person> model = await mediator.RequestAsync(new AllPersonsQuery());
 
-            return View(model);
+            return View("Index", model);
         }
     }
 }
