@@ -1,7 +1,9 @@
 ﻿using StructureMap;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AddressBook.Data
 {
+    [ExcludeFromCodeCoverage]
     public class DataLayerRegistry : Registry
     {
         public DataLayerRegistry()

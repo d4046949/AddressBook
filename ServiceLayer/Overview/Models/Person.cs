@@ -1,4 +1,6 @@
-﻿namespace AddressBook.ServiceLayer.Overview.Models
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AddressBook.ServiceLayer.Overview.Models
 {
     public class Person
     {

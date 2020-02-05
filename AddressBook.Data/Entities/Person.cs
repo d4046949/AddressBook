@@ -1,5 +1,8 @@
-﻿namespace AddressBook.Data.Entities
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AddressBook.Data.Entities
 {
+    [ExcludeFromCodeCoverage]
     public class Person : BaseEntity
     {
         public string Firstname { get; set; }

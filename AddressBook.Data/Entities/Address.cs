@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AddressBook.Data.Entities
 {
+    [ExcludeFromCodeCoverage]
     public class Address : BaseEntity
     {
         public string HouseName { get; set; }

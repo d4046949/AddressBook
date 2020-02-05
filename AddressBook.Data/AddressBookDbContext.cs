@@ -1,10 +1,11 @@
 ﻿using AddressBook.Data.Entities;
 using System.Data.Entity;
 using System.Data.SqlServerCe;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AddressBook.Data
 {
-
+    [ExcludeFromCodeCoverage]
     public class AddressBookDbContext : DbContext, IDbContext
     {
         public AddressBookDbContext() :
