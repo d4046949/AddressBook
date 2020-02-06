@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Address Book</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,35 +19,17 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
-
     <div class="container body-content">
-
-        <div class="btn btn-default">Create</div>
-
+        <div style="display:flex; align-items:center;">
+            <div style="flex-grow:1">
+            </div>
+            <div>
+                <button id="create_new_person_btn" type="button" class="btn btn-primary" data-ajax-url="@Url.Action("NewPerson", "Person")">Create New Person</button>
+            </div>
+        </div>
 
         @RenderBody()
         <hr />
@@ -56,36 +38,32 @@
         </footer>
     </div>
 
-    <div class="sidebar-overlay">
+    <div class="sidebar-overlay hide">
         <div class="sidebar2">
-            <div id="sidebar-header">
-                <h1>New Person</h1>
-            </div>
-            <div id="sidebar-content">
-                <form>
-                    <div class="form-group row">
-                        <label for="Forename" class="col-sm-2 col-form-label">Forename</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Forename">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Surname" class="col-sm-2 col-form-label">Surname</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Surname">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Create</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+           
         </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/app");
+
+    <script type="text/javascript">
+        $("[data-ajax-url]").on('click', function (event) {
+            event.preventDefault();
+
+            var sidebar = $('.sidebar2');
+            $.ajax({
+                url: $(this).data("ajax-url"),
+                type: 'GET',
+                success: function (response) {
+                    sidebar.html(response);
+                    $.validator.unobtrusive.parse('form');
+                     $('.sidebar-overlay').toggleClass('hide');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -5,6 +5,10 @@ height:100%;
 position:relative;
 }
 
+.hide {
+display:none;
+}
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -18,7 +22,7 @@ position:relative;
     background-color: red;
     z-index: 555;
     position: fixed;
-    background: rgba(0,0,0,0.25)
+    background: rgba(0,0,0,0.25);
 }
 .sidebar2 {
     position: absolute;
@@ -26,9 +30,9 @@ position:relative;
     right: 0;
     height: 100%;
     box-shadow: -5px 0 5px -5px #333;
-    z-index:555;
-    top:0;
-    background:white;
+    z-index: 555;
+    top: 0;
+    background: white;
 }
 
 div#sidebar-header {
@@ -45,5 +49,28 @@ div#sidebar-header h1 {
 div#sidebar-content {
     padding-top: 20px;
     margin: 0 20px 0 20px;
+}
+
+/******* form field validation ********/
+
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
 }
 
