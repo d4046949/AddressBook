@@ -27,6 +27,13 @@ namespace AddressBook.Tests.Controllers
         }
 
         [Test]
+        public void Home_Controller_Is_A_Controller()
+        {
+            // Assert
+            Assert.IsInstanceOf<Controller>(_controller);
+        }
+
+        [Test]
         public async Task HomeControllerIndex_Returns_View()
         {
             // Act

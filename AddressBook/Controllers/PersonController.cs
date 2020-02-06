@@ -23,7 +23,12 @@ namespace AddressBook.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateNewPerson(NewPersonModel model)
         {
-            return Json(true);
+            if (ModelState.IsValid)
+            {
+                return Json(true);
+            }
+
+            return PartialView("_NewPerson", model);
         }
     }
 }
