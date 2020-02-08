@@ -1,0 +1,38 @@
+﻿
+.sidebar-overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: red;
+    z-index: 555;
+    position: fixed;
+    background: rgba(0,0,0,0.25);
+}
+
+.sidebar2 {
+    position: absolute;
+    width: 450px;
+    right: 0;
+    height: 100%;
+    box-shadow: -5px 0 5px -5px #333;
+    z-index: 555;
+    top: 0;
+    background: white;
+
+    div#sidebar-header {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        background: #33ADFF;
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+    }
+
+    div#sidebar-content {
+        padding-top: 20px;
+        margin: 0 20px 0 20px;
+    }
+}
