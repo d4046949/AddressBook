@@ -54,7 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entries\Commands\CreatePersonCommandHandler.cs" />
     <Compile Include="Overview\Queries\AllPersonsQuery.cs" />
+    <Compile Include="AjaxCommandResult.cs" />
+    <Compile Include="Entries\Commands\CreatePersonCommand.cs" />
     <Compile Include="StructureMapMediator.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="ICommandHandler.cs" />

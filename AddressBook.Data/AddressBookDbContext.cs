@@ -7,6 +7,7 @@ namespace AddressBook.Data
 {
     [ExcludeFromCodeCoverage]
     public class AddressBookDbContext : DbContext, IDbContext
+
     {
         public AddressBookDbContext() :
               base(new SqlCeConnection("Data Source=|DataDirectory|MyDB.sdf"),
@@ -14,6 +15,6 @@ namespace AddressBook.Data
         {
         }
 
-        public virtual DbSet<Person> People { get; set; }
+        public DbSet<Person> People { get; set; }
     }
 }

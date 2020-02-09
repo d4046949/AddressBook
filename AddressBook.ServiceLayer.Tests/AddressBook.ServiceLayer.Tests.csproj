@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entries\CreatePersonCommandHandlerTests.cs" />
     <Compile Include="Overview\Queries\AllPersonsQueryHandlerTests.cs" />
     <Compile Include="TestHelpers\QueryableExtensions.cs" />
     <Compile Include="TestHelpers\TestDbAsyncEnumerable.cs" />

@@ -40,7 +40,7 @@
 
     <div class="sidebar-overlay hide">
         <div class="sidebar2">
-           
+
         </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
@@ -60,7 +60,7 @@
                 success: function (response) {
                     sidebar.html(response);
                     $.validator.unobtrusive.parse('form');
-                     $('.sidebar-overlay').toggleClass('hide');
+                    $('.sidebar-overlay').toggleClass('hide');
                 }
             });
         });
