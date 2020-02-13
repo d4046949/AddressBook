@@ -286,6 +286,8 @@
     <Content Include="Styles\_form.validation.scss" />
     <Content Include="Styles\_sidepanel.scss" />
     <Content Include="Styles\_global.scss" />
+    <Content Include="Styles\_person.card.scss" />
+    <Content Include="Views\Home\_PersonCard.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

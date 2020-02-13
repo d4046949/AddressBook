@@ -4,10 +4,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: red;
     z-index: 555;
     position: fixed;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.5);
 }
 
 .sidebar2 {
@@ -23,7 +22,7 @@
     div#sidebar-header {
         padding-top: 10px;
         padding-bottom: 20px;
-        background: #33ADFF;
+        background: #003366;
 
         h1 {
             text-align: center;
