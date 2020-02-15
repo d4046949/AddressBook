@@ -61,8 +61,16 @@
             margin: 10px;
             flex: 1;
             border-top: 4px solid #f8f9fa;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
+
+            span {
+                i {
+                    padding-right:10px;
+                    font-size:1.2em;
+                }
+            }
         }
+
     }
 }

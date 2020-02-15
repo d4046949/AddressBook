@@ -4,6 +4,10 @@ html, body {
     height: 100%;
     position: relative;
     background: #E8E8E8;
+    overflow: hidden;
+    font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
 
 .hide {
@@ -13,4 +17,8 @@ html, body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+p {
+    line-height: 1.5;
 }
