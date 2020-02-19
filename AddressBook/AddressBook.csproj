@@ -27,7 +27,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>3.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -171,6 +171,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <None Include="tsconfig.json" />
     <Content Include="gulpfile.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -279,6 +280,11 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Scripts\site\addressbook.ui.home.js" />
+    <TypeScriptCompile Include="ts\eventbus.ts" />
+    <TypeScriptCompile Include="ts\cardlist.ts" />
+    <TypeScriptCompile Include="ts\card.ts" />
+    <TypeScriptCompile Include="ts\modal.ts" />
+    <TypeScriptCompile Include="ts\main.ts" />
     <Content Include="Views\Person\_NewPerson.cshtml" />
     <Content Include="package.json" />
     <None Include="Styles\site.scss" />
@@ -289,6 +295,7 @@
     <Content Include="Styles\_person.card.scss" />
     <Content Include="Views\Home\_PersonCard.cshtml" />
     <Content Include="Styles\_modal.scss" />
+    <Content Include="Views\Person\_Details.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

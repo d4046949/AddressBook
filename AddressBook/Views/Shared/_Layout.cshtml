@@ -44,11 +44,14 @@
 
         </div>
     </div>
+
+    <div id="greeting"></div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
     @Scripts.Render("~/bundles/app");
+    <script src="@Url.Content("~/Scripts/site/bundle.js")"></script>
 
     <script type="text/javascript">
         $("[data-ajax-url]").on('click', function (event) {

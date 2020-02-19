@@ -36,5 +36,11 @@ namespace AddressBook.Controllers
 
             return PartialView("_NewPerson", model);
         }
+
+        [HttpGet]
+        public PartialViewResult Details(int id)
+        {
+            return PartialView("_Details");
+        }
     }
 }

@@ -20,12 +20,22 @@
     background: white;
 
     div#sidebar-header {
-        padding-top: 10px;
-        padding-bottom: 20px;
+        padding: 10px;
         background: #003366;
+        display: flex;
+        justify-content: space-between;
 
         h1 {
             text-align: center;
+            color: white;
+        }
+
+        button {
+            background: transparent;
+            color: white;
+            font-size: 1.5em;
+            border: none;
+            font-weight: 500;
             color: white;
         }
     }

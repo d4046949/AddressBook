@@ -11,20 +11,12 @@
             @Html.Partial("_PersonCard", p)
         }
         </div>
-<div class="my-modal" style="overflow-y:auto;">
+<div  id="modal-placeholder" class="my-modal hide" style="overflow-y:auto; ">
     <div style="display:flex; justify-content:center;">
-        <div class="modal-modal">
-            <div class="header">
-                <h1 class="modal-title">Modal Title Goes Here!!</h1>
-            </div>
-            <div class="body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse orci lectus, mollis fermentum justo at, malesuada ultricies metus. Donec varius malesuada ligula non maximus. Morbi lacus quam, molestie varius consequat id, tempor non purus. Aenean volutpat non purus ac consequat. Nunc non posuere ipsum, eu feugiat dui. Aliquam erat volutpat. Etiam fermentum orci facilisis, placerat metus in, malesuada nunc. Quisque elementum et odio euismod laoreet. In imperdiet sem finibus dui lacinia, mollis iaculis ipsum aliquam. Curabitur molestie laoreet nisi, ut ornare orci eleifend nec. Etiam pretium, ipsum ac vulputate gravida, nibh ipsum malesuada sem, at ultrices massa eros sed lectus. Praesent libero nisi, pulvinar eget faucibus vel, dapibus sed nisl. In eget quam a diam sagittis placerat eget in velit. Quisque venenatis, metus id mollis facilisis, urna metus lobortis leo, vel pellentesque neque mauris vitae nulla.</p>
-            </div>
-            <div class="footer">
-                <button>Close</button>
-            </div>
+        <div class="modal-modal hide" id="modal">
+       
 
         </div>
     </div>
 </div>
-<div class="backdrop"></div>
+<div id="backdrop" class="backdrop hide"></div>
