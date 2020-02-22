@@ -39,7 +39,7 @@
         </footer>
     </div>
 
-    <div class="sidebar-overlay hide">
+    <div class="sidebar-overlay">
         <div class="sidebar2">
 
         </div>
@@ -56,15 +56,15 @@
     <script type="text/javascript">
         $("[data-ajax-url]").on('click', function (event) {
             event.preventDefault();
-
-            var sidebar = $('.sidebar2');
+             var sidebar = $('.sidebar2');
             $.ajax({
                 url: $(this).data("ajax-url"),
                 type: 'GET',
                 success: function (response) {
                     sidebar.html(response);
                     $.validator.unobtrusive.parse('form');
-                    $('.sidebar-overlay').toggleClass('hide');
+ 
+                    sidebar.addClass('open');
                 }
             });
         });
