@@ -8,21 +8,22 @@
             </div>
             <div class="header-content">
                 <span>
-                    <strong>@Model.FirstName</strong>
+                    <strong>@Model.Name</strong>
                 </span>
             </div>
         </div>
         <div class="body">
             <div class="content">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    @Model.DateOfBirth
                 </p>
             </div><div class="footer">
-                <span>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fas fa-at"></i>
-                </span>
+                      <span>
+                          @foreach (var f in Model.Features)
+                          {
+                              <i class="@f.Icon"></i>
+                          }
+                      </span>
                 <div>
                     <button type="button" class="btn btn-primary btn-sm" data-id="1" data-button-type="card-button" data-ajax-modal-url="@Url.Action("Details", "Person", new {id = Model.Id })">More Details</button>
                 </div>

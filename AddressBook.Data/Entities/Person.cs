@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AddressBook.Data.Entities
 {
@@ -7,8 +8,7 @@ namespace AddressBook.Data.Entities
     {
         public string Firstname { get; set; }
         public string Surname { get; set; }
-        /*public int? AddressId { get; set; }
-
-        public virtual Address Address { get; set; }*/
+        public string DateOfBirth { get; set; }
+        public virtual List<Communication> Communication { get; set; }
     }
 }

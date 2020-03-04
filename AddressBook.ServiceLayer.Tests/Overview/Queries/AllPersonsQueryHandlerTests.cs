@@ -58,7 +58,7 @@ namespace AddressBook.ServiceLayer.Tests.Overview.Queries
             // Setup
             var expectedResult = new List<Person>
             {
-                new Person { Id = 1, FirstName = "Fred" }
+                new Person { Id = 1, Name = "Fred" }
             };
 
             var mockData = new List<Data.Entities.Person>

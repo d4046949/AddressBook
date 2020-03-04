@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entries\Commands\CreatePersonCommandHandler.cs" />
+    <Compile Include="Overview\Models\CommunicationFeatures.cs" />
     <Compile Include="Overview\Queries\AllPersonsQuery.cs" />
     <Compile Include="AjaxCommandResult.cs" />
     <Compile Include="Entries\Commands\CreatePersonCommand.cs" />

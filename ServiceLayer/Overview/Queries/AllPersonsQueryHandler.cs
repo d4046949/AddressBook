@@ -1,13 +1,15 @@
 ﻿using AddressBook.Data;
+using AddressBook.Data.Entities;
 using AddressBook.ServiceLayer.Overview.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace AddressBook.ServiceLayer.Overview.Queries
-{
-    public class AllPersonsQueryHandler : IQueryHandler<AllPersonsQuery, Task<IList<Person>>>
+{ 
+    public class AllPersonsQueryHandler : IQueryHandler<AllPersonsQuery, Task<IList<Models.Person>>>
     {
         private readonly IDbContext ctx;
 
@@ -16,15 +18,36 @@ namespace AddressBook.ServiceLayer.Overview.Queries
             this.ctx = ctx;
         }
 
-        public async Task<IList<Person>> Handle(AllPersonsQuery query)
+        public async Task<IList<Models.Person>> Handle(AllPersonsQuery query)
         {
-            return await ctx.People
-                .Select(p => new Person
+            var entries = await ctx.People.ToListAsync();
+
+            return entries.Select(p => new Models.Person
+            {
+                Id = p.Id,
+                Name = p.Firstname + " " + p.Surname,
+                DateOfBirth = p.DateOfBirth,
+                Features = p.Communication.Select(c => new CommunicationFeature
                 {
-                    FirstName = p.Firstname,
-                    Id = p.Id
-                })
-                .ToListAsync();
+                    Url = c.Url,
+                    Icon = MapTypeToIcon(c.Type)
+                }).ToList()
+            }).ToList();
+               
+        }
+
+        public static string MapTypeToIcon(CommunicationMediaType communcationType)
+        {
+            switch (communcationType)
+            {
+                case CommunicationMediaType.Email:
+                    return "fas fa-at";
+                case CommunicationMediaType.FaceBook:
+                    return "fab fa-facebook-square";
+                case CommunicationMediaType.Twitter:
+                    return "fab fa-twitter";
+            }
+            return string.Empty;
         }
     }
 }

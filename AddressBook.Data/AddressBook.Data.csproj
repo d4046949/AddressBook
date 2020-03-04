@@ -64,11 +64,17 @@
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="AddressBookDbContext.cs" />
+    <Compile Include="Entities\Communication.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Enums\SocialMediaType.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="Migrations\202002021637155_init.cs" />
     <Compile Include="Migrations\202002021637155_init.designer.cs">
       <DependentUpon>202002021637155_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003032024154_communication.cs" />
+    <Compile Include="Migrations\202003032024154_communication.designer.cs">
+      <DependentUpon>202003032024154_communication.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,7 +87,11 @@
     <EmbeddedResource Include="Migrations\202002021637155_init.resx">
       <DependentUpon>202002021637155_init.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003032024154_communication.resx">
+      <DependentUpon>202003032024154_communication.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

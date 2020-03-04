@@ -28,7 +28,11 @@ namespace AddressBook.Controllers
                 _mediator.Send(new CreatePersonCommand
                 {
                     Firstname = model.Forename,
-                    Surname = model.Surname
+                    Surname = model.Surname,
+                    DateOfBirth = model.DateOfBirth,
+                    Twitter = model.TwitterAccount,
+                    Email = model.Email,
+                    FaceBookAccount = model.FaceBookAccount
                 });
                 
                 return Json(true);

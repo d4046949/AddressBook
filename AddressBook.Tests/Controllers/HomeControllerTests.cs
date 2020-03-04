@@ -68,8 +68,8 @@ namespace AddressBook.Tests.Controllers
         {
             // Setup
             var mockData = new List<Person> {
-                new Person { FirstName = "john", Id = 1 },
-                new Person { FirstName = "Smith", Id = 2 }
+                new Person { Name = "john", Id = 1 },
+                new Person { Name = "Smith", Id = 2 }
             };
 
              _mediator.Setup(m => m.RequestAsync(It.IsAny<AllPersonsQuery>())).ReturnsAsync(mockData);
