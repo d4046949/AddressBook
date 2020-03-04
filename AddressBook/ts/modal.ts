@@ -1,17 +1,16 @@
 ﻿import { bus } from './eventbus';
 
 export class Modal {
-    modal: HTMLElement;
-    modalbackdrop: HTMLElement;
-    modalplaceholder: HTMLElement;
+    modal: JQuery<HTMLElement>;
+    modalbackdrop: JQuery<HTMLElement>;
+    modalplaceholder: JQuery<HTMLElement>;
     cardLists: any;
 
     constructor() {
-        this.modal = document.getElementById('modal');
-        this.modalbackdrop = document.getElementById('backdrop');
-        this.modalplaceholder = document.getElementById('modal-placeholder');
-        console.log(this.modalbackdrop);
-
+        this.modal = $('#modal');
+        this.modalbackdrop = $('#backdrop');
+        this.modalplaceholder = $('#modal-placeholder');
+        
         bus.subscribe("modal:show", () => { alert('modal recieved event'); });
     }
 
@@ -21,39 +20,32 @@ export class Modal {
 
     listenForLoadEvents = () => {
         var self = this;
-        this.cardLists = document.querySelectorAll('[data-ajax-modal-url]');
+        this.cardLists = $('[data-ajax-modal-url]');
         for (const button of this.cardLists) {
             button.addEventListener('click', function (e: any) {
                 let url: string = this.getAttribute('data-ajax-modal-url');
                 /* move to axios */
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', url);
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        self.modal.innerHTML = xhr.responseText;
-                        self.show();
-                    }
-                    else {
-                        alert('Request failed.  Returned status of ' + xhr.status);
-                    }
-                };
-                xhr.send();
+                $.get(url, (data) => {
+                    alert();
+                    self.modal.html(data.responseText);
+                    self.show();
+                });
             });
         }
     }
 
     show = () => {
-        this.modalplaceholder.classList.remove('hide');
-        this.modalbackdrop.classList.remove('hide');
+        this.modalplaceholder.removeClass('hide');
+        this.modalbackdrop.removeClass('hide');
         var self = this;
-        this.modalbackdrop.addEventListener('click', function () {
+        this.modalbackdrop.on('click', function () {
             self.hide();
         });
     }
 
     hide = () => {
-        this.modalplaceholder.classList.add('hide');
-        this.modalbackdrop.classList.add('hide');
+        this.modalplaceholder.addClass('hide');
+        this.modalbackdrop.addClass('hide');
         this.modalplaceholder.click = null;
     }
 }

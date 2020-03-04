@@ -13,4 +13,4 @@ var CardList = /** @class */ (function () {
     return CardList;
 }());
 exports.CardList = CardList;
-//# sourceMappingURL=cardlist.js.map
+//# sourceMappingURL=cardList.js.map
