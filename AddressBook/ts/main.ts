@@ -1,10 +1,12 @@
 ﻿import { Modal } from './modal';
 import { CardList } from './cardList';
 import { EventBus } from './eventbus';
- 
+import { Utils } from './utils';
+
 var modal = new Modal();
 var cardList = new CardList();
 var eBus = new EventBus();
+var utils = new Utils();
 
 modal.initialize();
 

@@ -280,9 +280,11 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Scripts\site\addressbook.ui.home.js" />
+    <TypeScriptCompile Include="ts\utils.ts" />
+    <TypeScriptCompile Include="ts\card.ts" />
     <TypeScriptCompile Include="ts\eventbus.ts" />
     <TypeScriptCompile Include="ts\cardlist.ts" />
-    <TypeScriptCompile Include="ts\card.ts" />
+    <TypeScriptCompile Include="ts\newperson.ts" />
     <TypeScriptCompile Include="ts\modal.ts" />
     <TypeScriptCompile Include="ts\main.ts" />
     <Content Include="Views\Person\_NewPerson.cshtml" />

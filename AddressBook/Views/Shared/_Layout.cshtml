@@ -6,7 +6,6 @@
     <title>Address Book - A simple application</title>
     <script src="https://kit.fontawesome.com/0f525e4857.js" crossorigin="anonymous"></script>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -50,24 +49,8 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
-    @Scripts.Render("~/bundles/app");
+    
     <script src="@Url.Content("~/Scripts/site/bundle.js")"></script>
 
-    <script type="text/javascript">
-        $("[data-ajax-url]").on('click', function (event) {
-            event.preventDefault();
-             var sidebar = $('.sidebar2');
-            $.ajax({
-                url: $(this).data("ajax-url"),
-                type: 'GET',
-                success: function (response) {
-                    sidebar.html(response);
-                    $.validator.unobtrusive.parse('form');
- 
-                    sidebar.addClass('open');
-                }
-            });
-        });
-    </script>
 </body>
 </html>

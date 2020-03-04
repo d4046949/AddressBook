@@ -29,7 +29,7 @@
         <div class="form-group row">
             @Html.LabelFor(model => model.DateOfBirth, new { @class = "col-sm-3 col-form-label" })
             <div class="col-sm-9">
-                @Html.TextBoxFor(model => model.DateOfBirth, new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.DateOfBirth, new { @class = "form-control", maxlength="10" })
                 @Html.ValidationMessageFor(model => model.DateOfBirth)
             </div>
         </div>
