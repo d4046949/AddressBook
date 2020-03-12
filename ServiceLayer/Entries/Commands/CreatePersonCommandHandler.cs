@@ -1,6 +1,8 @@
 ﻿using AddressBook.Data;
 using AddressBook.Data.Entities;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
 
 namespace AddressBook.ServiceLayer.Entries.Commands
@@ -16,11 +18,13 @@ namespace AddressBook.ServiceLayer.Entries.Commands
 
         public async Task<AjaxCommandResult> Handle(CreatePersonCommand command)
         {
+            string format = "dd/MM/yyyy";
+
             var newPerson = new Person
             {
                 Firstname = command.Firstname,
                 Surname = command.Surname,
-                DateOfBirth = command.DateOfBirth
+                DateOfBirth = DateTime.ParseExact(command.DateOfBirth, format, CultureInfo.InvariantCulture)
             };
 
             newPerson.Communication = MapCommuncation(command, newPerson);

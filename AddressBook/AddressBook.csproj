@@ -171,6 +171,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Styles\_variables.scss" />
+    <Content Include="Styles\_sidebar.scss" />
+    <Content Include="Styles\_mainpanel.scss" />
     <None Include="tsconfig.json" />
     <Content Include="gulpfile.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -298,6 +301,7 @@
     <Content Include="Views\Home\_PersonCard.cshtml" />
     <Content Include="Styles\_modal.scss" />
     <Content Include="Views\Person\_Details.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />

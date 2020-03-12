@@ -1,0 +1,44 @@
+﻿.sidebar-sm {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+    background: $side-bar-color;
+
+    &.new-bar {
+        box-shadow: -10px 0 5px -2px $side-bar-shadow-color;
+        position: relative;
+        width: 60px;
+        z-index: 100;
+        transition: width 1s ease-in-out;
+
+        .icon {
+            position: absolute;
+            top: 70px;
+            left: -12px;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: white;
+            color: grey;
+            display: none;
+            z-index: 200;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        &.open {
+            width: 450px;
+            transition: width 1s ease-in-out;
+        }
+    }
+}
+
+.search-bar {
+    box-shadow: 10px 0 5px -2px $side-bar-shadow-color;
+}
+

@@ -26,7 +26,8 @@ namespace AddressBook.ServiceLayer.Overview.Queries
             {
                 Id = p.Id,
                 Name = p.Firstname + " " + p.Surname,
-                DateOfBirth = p.DateOfBirth,
+                DateOfBirth = p.DateOfBirth.ToString("dd/MM/yyyy"),
+                Age = DateTime.Now.Year - p.DateOfBirth.Year,
                 Features = p.Communication.Select(c => new CommunicationFeature
                 {
                     Url = c.Url,

@@ -7,6 +7,11 @@ using System.Web.Mvc;
 
 namespace AddressBook.Controllers
 {
+    public class Timetable
+    {
+        public int Days = 30;
+    }
+
     public class HomeController : Controller
     {
         private readonly IMediator mediator;
@@ -21,6 +26,11 @@ namespace AddressBook.Controllers
            IList<Person> model = await mediator.RequestAsync(new AllPersonsQuery());
 
             return View("Index", model);
+        }
+
+        public ActionResult Index2()
+        {
+            return View(new Timetable());
         }
     }
 }

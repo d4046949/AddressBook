@@ -76,6 +76,10 @@
     <Compile Include="Migrations\202003032024154_communication.designer.cs">
       <DependentUpon>202003032024154_communication.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003041655576_updatedDateOfBirthField.cs" />
+    <Compile Include="Migrations\202003041655576_updatedDateOfBirthField.designer.cs">
+      <DependentUpon>202003041655576_updatedDateOfBirthField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003032024154_communication.resx">
       <DependentUpon>202003032024154_communication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041655576_updatedDateOfBirthField.resx">
+      <DependentUpon>202003041655576_updatedDateOfBirthField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

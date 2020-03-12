@@ -1,0 +1,19 @@
+﻿.address-book-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 2;
+    margin: 20px;
+
+    .entries {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+
+        .alpha {
+            font-size: 1.3em;
+            border-bottom: 5px solid $side-bar-color;
+            width: 100%;
+        }
+    }
+}

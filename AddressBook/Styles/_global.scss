@@ -9,12 +9,28 @@ html, body {
     --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
+.navbar-custom {
+    background-color: $primary-color;
 
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+     .navbar-brand,
+     .navbar-text {
+        color: white;
+    }
 }
 
 p {
     line-height: 1.5;
+}
+
+.text-transform-270 {
+    transform: rotate(270deg);
+}
+
+.application-img {
+    position: absolute;
+    bottom: 15px;
+    right: 105px;
+    font-size: 80px;
+    color: $application-icon-color;
+    opacity: 0.5;
 }

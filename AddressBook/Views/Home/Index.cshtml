@@ -4,13 +4,16 @@
     ViewBag.Title = "Home Page";
 
 }
-    <div style="display:flex;flex-wrap: wrap;padding: 0px 60px;justify-content: start;">
-
+    <div class="entries">
+        <div class="alpha" style="display:flex; flex-direction:row; justify-content:space-between;">
+            <span>A</span>
+            <span><i class="fas fa-angle-double-up"></i></span>
+        </div>
         @foreach (var p in Model)
         {
             @Html.Partial("_PersonCard", p)
         }
-        </div>
+    </div>
 <div  id="modal-placeholder" class="my-modal hide" style="overflow-y:auto; ">
     <div style="display:flex; justify-content:center;">
         <div class="modal-modal hide" id="modal">
@@ -20,3 +23,4 @@
     </div>
 </div>
 <div id="backdrop" class="backdrop hide"></div>
+

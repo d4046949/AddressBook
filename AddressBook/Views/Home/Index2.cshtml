@@ -1,0 +1,128 @@
+﻿@model AddressBook.Controllers.Timetable
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+
+    .calendar-container {
+        width:1000px; 
+        margin-left:150px;
+        overflow-x:auto; 
+        overflow-y:hidden;
+        height:100%;
+    }
+    .calendar-row {
+        width:100%;
+        height:100%; 
+        height:50px; 
+        display:inline-block; 
+        white-space:nowrap;
+    }
+
+    .calendar-row:not(:first-child) {
+        margin-top: -6px;
+    }
+
+
+    .calendar-row > .date:not(:first-child) {
+        margin-left: -5px;
+    }
+
+    .calendar-row (:first-child) {
+        margin-left: -5px;
+    }
+
+    .calendar-names {
+        width: 150px;
+        position: fixed;
+    }
+
+    .name {
+        height: 48px;
+        border-right: #E8E8E8 solid 1px;
+        border-left: #E8E8E8 solid 1px;
+        text-align:center;
+        padding-top:10px;
+    }
+
+    .calendar-names > .name:not(:first-child) {
+        border-top: #E8E8E8 solid 1px;
+    }
+
+    .date {
+        border:1px solid #E8E8E8;
+        width:40px;
+        display:inline-block;
+        height:100%;
+    }
+
+    .weekend{
+        background:#6c757d;
+    }
+
+       .pending-approval {
+        background:#FFC107;
+    }
+
+       .approved {
+            background:#28A745;
+       }
+    
+    ul {
+        list-style-type:none; 
+    }
+
+    ul > li {
+        display:inline;
+        margin-right:30px;
+    }
+
+</style>
+<div class="card">
+    <div class="card-header bg-transparent border-success">Calendar</div>
+    <div class="card-body">
+        <div class="calendar-names">
+            <div class="name">John</div>
+            <div class="name">James</div>
+        </div>
+        <div class="calendar-container">
+
+            <div class="calendar-row">
+                @for (int i = 0; i < Model.Days; i++)
+                {
+
+                    <div class="date @(@i % 6 == 0 ? "weekend" : "pending-approval")">
+
+                    </div>
+
+                }
+            </div>
+            <div class="calendar-row">
+                @for (int i = 0; i < Model.Days; i++)
+                {
+                    <div class="date @(@i % 6 == 0 ? "weekend" : i == 2 || i==3 || i ==4 ? "approved" : "")">
+
+                    </div>
+
+                }
+            </div>
+
+        </div>
+    </div>
+    <div class="card-footer bg-transparent border-success">
+        <ul style="">
+            <li>
+                <div class="weekend" style="display:inline-block; width:15px; height:15px;"></div> Weekend
+            </li>
+            <li>
+                <div class="pending-approval" style="display:inline-block; width:15px; height:15px;"></div> Pending Approval
+            </li>
+            <li>
+                <div class="approved" style="display:inline-block; width:15px; height:15px;"></div>Approved
+            </li>
+        </ul>
+        
+    </div>
+</div>

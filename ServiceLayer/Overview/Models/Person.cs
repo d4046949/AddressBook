@@ -9,6 +9,7 @@ namespace AddressBook.ServiceLayer.Overview.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string DateOfBirth { get; set; }
+        public int Age { get; set; }
         public List<CommunicationFeature> Features { get; set; }
     }
 }

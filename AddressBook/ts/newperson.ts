@@ -1,6 +1,4 @@
-﻿import { bus } from './eventbus';
-
-export class NewPerson {
+﻿export class NewPerson {
     dateOfBirth: JQuery<HTMLElement>;
 
     init = () => {

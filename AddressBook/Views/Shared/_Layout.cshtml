@@ -8,49 +8,58 @@
     @Styles.Render("~/Content/css")
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <a class="navbar-brand" href="#">Address Book</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
     </nav>
-    <div class="body-content">
-        <div style="display:flex; align-items:center; height:150px;" >
-            <div style="flex-grow:1">
-            </div>
-            <div>
-                <button id="create_new_person_btn" type="button" class="btn btn-primary" data-ajax-url="@Url.Action("NewPerson", "Person")">Create New Person</button>
-            </div>
-        </div>
-
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year</p>
-        </footer>
-    </div>
-
-    <div class="sidebar-overlay">
-        <div class="sidebar2">
-
+    <div style="width:100%; height:50px; background:white; box-shadow: 10px 10px 5px -2px grey">
+        <div style="display:flex; flex-direction:row; align-items:center; height:100%;">
+            <i style="font-size:26px; padding:10px; border-right:1px solid grey;" class="active far fa-address-card"></i>
+            <i style="font-size:26px; padding:10px; opacity:0.3;" class="fas fa-map-marked-alt"></i>
         </div>
     </div>
+    <div class="body-content" style="height:100%; width:100%;">
+        <div class="h-100 w-100 " style="display:flex; flex-direction:row;">
+            <div class="sidebar-sm search-bar">
+                <span class="text-transform-270"> Search </span>
+            </div>
+            <div class="address-book-container">
+
+                @*<div style="display:flex; align-items:center; height:150px;">
+                        @*<div>
+                            <button id="create_new_person_btn" type="button" class="btn btn-primary" data-ajax-url="@Url.Action("NewPerson", "Person")">Create New Person</button>
+                        </div>
+                    </div>*@
+
+                @RenderBody()
+            </div>
+            <div class="sidebar-sm new-bar" data-ajax-url="@Url.Action("NewPerson", "Person")">
+                <div class="icon">
+                    <i style="font-size: 1.4em" class="fas fa-chevron-circle-left"></i>
+                </div>
+                <span class="text-transform-270" data-id="new"> New </span>
+                <section id="new-content-placeholder"></section>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="sidebar-overlay" >
+        <div class="sidebar2" >
+
+        </div>
+    </div>*@
 
     <div id="greeting"></div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
-    
+
     <script src="@Url.Content("~/Scripts/site/bundle.js")"></script>
+    <div class="application-img"><i class="far fa-address-book"></i></div>
 
 </body>
+
 </html>

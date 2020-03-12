@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
 namespace AddressBook.Data.Entities
@@ -8,7 +9,7 @@ namespace AddressBook.Data.Entities
     {
         public string Firstname { get; set; }
         public string Surname { get; set; }
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }   
         public virtual List<Communication> Communication { get; set; }
     }
 }
